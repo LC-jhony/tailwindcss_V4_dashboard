@@ -49,10 +49,15 @@
 </head>
 
 <body class="antialiased bg-zinc-50 dark:bg-gray-900">
-    <header class="bg-indigo-600 dark:bg-indigo-700 pb-52 text-white shadow">
-        <div x-data="{ open: false, userMenuOpen: false }"
-            class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
-            <div class="flex flex-row items-center justify-between p-4 gap-4">
+    <!-- Header Background -->
+    <div class="fixed top-0 left-0 right-0 h-60 bg-indigo-600 dark:bg-indigo-700 -z-10 transition-colors"></div>
+
+    <!-- Sticky Nav -->
+    <nav class="mx-auto max-w-7xl sticky top-0 z-50 bg-indigo-600 dark:bg-indigo-700 text-white"
+        x-data="{ open: false, userMenuOpen: false }">
+        <div
+            class="flex flex-col max-w-7xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8 p-4">
+            <div class="flex flex-row items-center justify-between gap-4">
                 <a href="#"
                     class="text-lg font-semibold tracking-widest text-white uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline">Flowtrail
                     UI</a>
@@ -67,7 +72,7 @@
                     </svg>
                 </button>
             </div>
-            <nav :class="{'flex': open, 'hidden': !open}"
+            <div :class="{'flex': open, 'hidden': !open}"
                 class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-start md:flex-row">
                 <a class="bg-indigo-700 px-4 py-2 mt-2 text-sm font-semibold text-white bg-indigo-600 rounded-lg dark:bg-indigo-900/20 dark:hover:bg-indigo-900/15 md:mt-0 md:ml-2 hover:bg-indigo-500 focus:outline-none"
                     href="#">Blog</a>
@@ -185,14 +190,13 @@
                     </div>
                 </div>
 
-            </nav>
+            </div>
         </div>
-        </div>
-    </header>
+    </nav>
     <!-- MAIN -->
-    <main class="mx-auto -mt-48 max-w-7xl px-6 pb-24">
-        <div class="flex items-center justify-between mb-12">
-            <h1 class="text-4xl font-semibold tracking-tight text-white dark:text-white">Dashboard</h1>
+    <main class="mx-auto max-w-7xl px-6 pt-10">
+        <div class="flex items-center justify-between mb-8">
+            <h1 class="text-3xl font-semibold tracking-tight text-white dark:text-white">Dashboard</h1>
             <!-- Right Side -->
             <div class="flex items-center space-x-2 md:space-x-4">
                 <!-- Search Desktop -->
